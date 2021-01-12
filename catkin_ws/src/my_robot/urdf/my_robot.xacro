@@ -37,7 +37,6 @@
       </geometry>
     </visual>
 
-
     <collision name='back_caster_collision'>
       <origin xyz="-0.15 0 -0.05" rpy=" 0 0 0"/>
       <geometry>
@@ -88,14 +87,14 @@
       />
     </inertial>
 
-    <collision name='collision'>
+    <collision name='left_wheel_collision'>
       <origin xyz="0 0 0" rpy=" 0 1.5707 1.5707"/>
       <geometry>
         <cylinder radius="0.1" length="0.05"/>
       </geometry>
     </collision>
 
-    <visual name='visual'>
+    <visual name='left_wheel_visual'>
       <origin xyz="0 0 0" rpy=" 0 1.5707 1.5707"/>
       <geometry>
         <cylinder radius="0.1" length="0.05"/>
@@ -123,14 +122,14 @@
       />
     </inertial>
 
-    <collision name='collision'>
+    <collision name='right_wheel_collision'>
       <origin xyz="0 0 0" rpy=" 0 1.5707 1.5707"/>
       <geometry>
         <cylinder radius="0.1" length="0.05"/>
       </geometry>
     </collision>
 
-    <visual name='visual'>
+    <visual name='right_wheel_visual'>
       <origin xyz="0 0 0" rpy=" 0 1.5707 1.5707"/>
       <geometry>
         <cylinder radius="0.1" length="0.05"/>
@@ -156,14 +155,14 @@
       />
     </inertial>
 
-    <collision name='collision'>
+    <collision name='camera_collision'>
       <origin xyz="0.0 0 0" rpy=" 0 0 0"/>
       <geometry>
         <box size=".05 .05 .05"/>
       </geometry>
     </collision>
 
-    <visual name='visual'>
+    <visual name='camera_visual'>
       <origin xyz="0.0 0 0" rpy=" 0 0 0"/>
       <geometry>
         <box size=".05 .05 .05"/>
@@ -189,14 +188,14 @@
       />
     </inertial>
 
-    <collision name='collision'>
+    <collision name='hokuyo_collision'>
       <origin xyz="0.0 0 0" rpy=" 0 0 0"/>
       <geometry>
         <box size=".1 .1 .1"/>
       </geometry>
     </collision>
 
-    <visual name='visual'>
+    <visual name='hokuyo_visual'>
       <origin xyz="0.0 0 0" rpy=" 0 0 0"/>
       <geometry>
         <mesh filename="package://my_robot/meshes/hokuyo.dae"/>
@@ -205,4 +204,22 @@
 
   </link>
 
+  <gazebo reference="chassis">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+
+  <gazebo reference="left_wheel">
+    <material>Gazebo/Green</material>
+  </gazebo>
+
+  <gazebo reference="right_wheel">
+    <material>Gazebo/Green</material>
+  </gazebo>
+
+  <gazebo reference="camera">
+    <material>Gazebo/Red</material>
+  </gazebo>
+
 </robot>
+
+
