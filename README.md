@@ -2,6 +2,29 @@
 
 ---
 
+### Implementation Details
+
+**`my_robot` ROS packages** consists of
+
+- A differential drive robot designed using Unified Robot Description Format (URDF)
+- Robot consists of lidar and camera sensor.
+- Gazebo plugins for the robot's differential drive, lidar, and camera
+
+**`ball_chaser` ROS package** consists of
+
+- `drive_bot` node
+
+    - Provides a `ball_chaser/command_robot` service
+    - Service accepts linear x and angular z velocities
+    - Service publishes to the wheel joints
+
+- `process_image` node
+
+    - Subscribes to the robot's camera image feeds
+    - A function to analyze the image and determine the presence and position of a white ball
+    - Requests a service to drive the robot towards a white ball (when present)
+
+
 ### Dependencies
 
 - ROS Kinetic
