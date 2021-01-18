@@ -44,7 +44,7 @@ void process_image_callback(const sensor_msgs::Image img)
   for (uint32_t r=0; r<img.height; r++){
     for (uint32_t c=0; c<img.width; c++){
       uint32_t index = (r*img.step) + c*CHANNELS;  //img.data is a flatten 1D array of
-      uint8_t grayValueR = img.data[index];       //inital 2D array of shape [img.height,img.width*CHANNELS]
+      uint8_t grayValueR = img.data[index];        //inital 2D array of shape [img.height,img.width*CHANNELS]
       uint8_t grayValueG = img.data[index+1];     
       uint8_t grayValueB = img.data[index+2];
 
@@ -61,7 +61,7 @@ void process_image_callback(const sensor_msgs::Image img)
         {
           case 0:
             ROS_INFO("White blob on left. Steering left.");
-            drive_robot(robotSpeed, 1.0*ANGULAR_Z);
+            drive_robot(0.0, 1.0*ANGULAR_Z);
             break;
           case 1:
             ROS_INFO("White blob on middle. Driving straight.");
@@ -69,7 +69,7 @@ void process_image_callback(const sensor_msgs::Image img)
           break;
           case 2:
             ROS_INFO("White blob on right. Steering right.");
-            drive_robot(robotSpeed, -1.0*ANGULAR_Z);
+            drive_robot(0.0, -1.0*ANGULAR_Z);
           break;
           default:
             break;
