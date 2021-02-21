@@ -2,6 +2,10 @@
 
 ---
 
+### Demo
+
+![alt text](images/demo.gif)
+
 ### Implementation Details
 
 **`my_robot` ROS packages** consists of
